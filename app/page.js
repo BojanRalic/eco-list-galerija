@@ -99,6 +99,8 @@ export default function Page() {
             onClose={() => setLightboxIndex(null)}
             onPrev={handlePrev}
             onNext={handleNext}
+            selectedIds={selectedIds}
+            onToggleSelect={toggleSelect}
           />
         )}
       </AnimatePresence>

@@ -3,7 +3,15 @@
 import { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function Lightbox({ index, images, onClose, onPrev, onNext }) {
+function HeartIcon({ filled }) {
+  return (
+    <svg className="w-5 h-5" viewBox="0 0 24 24" fill={filled ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+    </svg>
+  )
+}
+
+export default function Lightbox({ index, images, onClose, onPrev, onNext, selectedIds, onToggleSelect }) {
   const image = images[index]
   const touchStart = useRef(null)
 
@@ -39,6 +47,18 @@ export default function Lightbox({ index, images, onClose, onPrev, onNext }) {
       onTouchEnd={handleTouchEnd}
       className="fixed inset-0 z-50 bg-black/92 flex items-center justify-center p-4"
     >
+      <button
+        onClick={(e) => { e.stopPropagation(); onToggleSelect(image.id) }}
+        className={`absolute top-4 left-4 z-10 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm ${
+          selectedIds.has(image.id)
+            ? 'bg-forest-800 text-cream-50'
+            : 'bg-white/20 text-white hover:bg-white/30'
+        }`}
+        aria-label={selectedIds.has(image.id) ? 'Ukloni iz odabranih' : 'Dodaj u odabrane'}
+      >
+        <HeartIcon filled={selectedIds.has(image.id)} />
+      </button>
+
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-white/70 hover:text-white p-2 z-10"
