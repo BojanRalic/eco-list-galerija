@@ -1,7 +1,7 @@
 import { kv } from '@vercel/kv'
 import { applySelectionUpdate } from '@/lib/selection'
 
-const KEY = 'eco-list-selection'
+const KEY = 'bio-list-selection'
 
 export async function GET() {
   const ids = await kv.get(KEY) ?? []

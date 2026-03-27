@@ -22,6 +22,7 @@
     "@types/react-dom": "^19",
     "jest": "^30.3.0",
     "jest-environment-node": "^30.3.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

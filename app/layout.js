@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata = {
-  title: 'Eco List — Galerija',
+  title: 'Bio List — Galerija',
   description: 'Odaberite vaše omiljene fotografije',
 }
 

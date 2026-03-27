@@ -48,18 +48,6 @@ export default function Lightbox({ index, images, onClose, onPrev, onNext, selec
       className="fixed inset-0 z-50 bg-black/92 flex items-center justify-center p-4"
     >
       <button
-        onClick={(e) => { e.stopPropagation(); onToggleSelect(image.id) }}
-        className={`absolute top-4 left-4 z-10 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm ${
-          selectedIds.has(image.id)
-            ? 'bg-forest-800 text-cream-50'
-            : 'bg-white/20 text-white hover:bg-white/30'
-        }`}
-        aria-label={selectedIds.has(image.id) ? 'Ukloni iz odabranih' : 'Dodaj u odabrane'}
-      >
-        <HeartIcon filled={selectedIds.has(image.id)} />
-      </button>
-
-      <button
         onClick={onClose}
         className="absolute top-4 right-4 text-white/70 hover:text-white p-2 z-10"
         aria-label="Zatvori"
@@ -96,16 +84,27 @@ export default function Lightbox({ index, images, onClose, onPrev, onNext, selec
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.96 }}
           transition={{ duration: 0.2 }}
-          className="relative"
+          className="relative inline-block"
           onClick={e => e.stopPropagation()}
         >
           <img
             src={image.src}
             alt={image.alt}
             draggable="false"
-            className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            className="max-w-full max-h-[85vh] object-contain rounded-lg block"
             style={{ pointerEvents: 'none' }}
           />
+          <button
+            onClick={(e) => { e.stopPropagation(); onToggleSelect(image.id) }}
+            className={`absolute top-3 right-3 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 shadow-md ${
+              selectedIds.has(image.id)
+                ? 'bg-forest-800 text-cream-50'
+                : 'bg-black/40 text-white hover:bg-black/60'
+            }`}
+            aria-label={selectedIds.has(image.id) ? 'Ukloni iz odabranih' : 'Dodaj u odabrane'}
+          >
+            <HeartIcon filled={selectedIds.has(image.id)} />
+          </button>
         </motion.div>
       </AnimatePresence>
 
