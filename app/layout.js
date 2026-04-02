@@ -6,7 +6,23 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 
 export const metadata = {
   title: 'Bio List — Galerija',
-  description: 'Odaberite vaše omiljene fotografije',
+  description: 'Galerija fotografija brenda Bio List. Pregledajte i odaberite vaše omiljene fotografije.',
+  openGraph: {
+    title: 'Bio List — Galerija',
+    description: 'Galerija fotografija brenda Bio List. Pregledajte i odaberite vaše omiljene fotografije.',
+    url: 'https://bio-list-galerija.vercel.app',
+    siteName: 'Bio List Galerija',
+    images: [
+      {
+        url: 'https://bio-list-galerija.vercel.app/images/logo.png',
+        width: 588,
+        height: 507,
+        alt: 'Bio List logo',
+      },
+    ],
+    locale: 'sr_RS',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({ children }) {
