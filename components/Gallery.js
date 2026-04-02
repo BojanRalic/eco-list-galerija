@@ -12,7 +12,7 @@ function HeartIcon({ filled }) {
 
 export default function Gallery({ images, selectedIds, onToggleSelect, onOpenLightbox }) {
   return (
-    <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+    <div className="columns-2 lg:columns-3 gap-4 space-y-4">
       <AnimatePresence>
         {images.map((image, index) => {
           const isSelected = selectedIds.has(image.id)
@@ -47,7 +47,7 @@ export default function Gallery({ images, selectedIds, onToggleSelect, onOpenLig
                 className={`absolute top-3 right-3 z-10 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm ${
                   isSelected
                     ? 'bg-forest-800 text-cream-50'
-                    : 'bg-white/80 text-forest-700 opacity-0 group-hover:opacity-100'
+                    : 'bg-white/80 text-forest-700 opacity-70 sm:opacity-0 sm:group-hover:opacity-100'
                 }`}
                 aria-label={isSelected ? 'Ukloni iz odabranih' : 'Dodaj u odabrane'}
               >

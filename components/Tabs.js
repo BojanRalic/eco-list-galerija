@@ -3,7 +3,7 @@
 export default function Tabs({ activeTab, onTabChange, selectedCount }) {
   const tabs = [
     { id: 'sve', label: 'Sve fotografije' },
-    { id: 'odabrane', label: selectedCount > 0 ? `Odabrane (${selectedCount})` : 'Odabrane' },
+    { id: 'odabrane', label: `Odabrane (${selectedCount})` },
   ]
 
   return (

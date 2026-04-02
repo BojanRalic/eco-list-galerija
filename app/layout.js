@@ -14,14 +14,22 @@ export const metadata = {
     siteName: 'Bio List Galerija',
     images: [
       {
-        url: 'https://bio-list-galerija.vercel.app/og-image.png',
+        url: 'https://bio-list-galerija.vercel.app/og-image.jpg',
+        secureUrl: 'https://bio-list-galerija.vercel.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Bio List logo',
+        type: 'image/jpeg',
       },
     ],
     locale: 'sr_RS',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bio List — Galerija',
+    description: 'Galerija fotografija brenda Bio List. Pregledajte i odaberite vaše omiljene fotografije.',
+    images: ['https://bio-list-galerija.vercel.app/og-image.jpg'],
   },
 }
 
