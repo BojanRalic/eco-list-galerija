@@ -14,9 +14,9 @@ export const metadata = {
     siteName: 'Bio List Galerija',
     images: [
       {
-        url: 'https://bio-list-galerija.vercel.app/images/logo.png',
-        width: 588,
-        height: 507,
+        url: 'https://bio-list-galerija.vercel.app/og-image.png',
+        width: 748,
+        height: 667,
         alt: 'Bio List logo',
       },
     ],
