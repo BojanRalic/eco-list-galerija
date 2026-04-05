@@ -45,7 +45,7 @@ export default function Lightbox({ index, images, onClose, onPrev, onNext, selec
       onContextMenu={e => e.preventDefault()}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="fixed inset-0 z-50 bg-black/92 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 bg-black/92 flex items-center justify-center pt-16 pb-4 px-4"
     >
       <button
         onClick={onClose}
